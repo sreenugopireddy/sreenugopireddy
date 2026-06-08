@@ -106,7 +106,7 @@ class Sreenu:
 <div align="center">
 
 [![Portfolio](https://img.shields.io/badge/3D_Portfolio-0d1117?style=for-the-badge&logo=vercel&logoColor=58a6ff&labelColor=0d1117)](https://3d-portfolio-psi-five.vercel.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sreenugopireddy)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sreenu-gopireddy/)
 [![GitHub](https://img.shields.io/badge/GitHub-sreenugopireddy-0d1117?style=for-the-badge&logo=github&logoColor=58a6ff&labelColor=0d1117)](https://github.com/sreenugopireddy)
 
 ```
