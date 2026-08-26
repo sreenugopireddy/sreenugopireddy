@@ -80,7 +80,7 @@ flowchart LR
 | Eval gate pass rate | `XX%` |
 | CI/CD deploy time | `~X min` |
 
-> ⚠️ Replace the placeholders above with your actual measured numbers — real figures (even modest ones) carry far more weight with reviewers than round marketing numbers.
+
 
 ---
 
