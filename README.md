@@ -45,8 +45,42 @@ class Sreenu:
 | 📋 **Prompt Registry** | Semver prompt versioning · eval gates before promotion |
 | 📊 **Eval Harness** | Automated evaluation · quality gates · metrics tracking |
 
-**Live Gateway →** `llm-platform-gateway.greentree-67d78498.eastus.azurecontainerapps.io`  
+**Live Gateway →** `llm-platform-gateway.greentree-67d78498.eastus.azurecontainerapps.io`
 **Stack →** FastAPI · Azure Container Apps · Cosmos DB Serverless · Bicep IaC · GitHub Actions
+
+### 🧭 How it works
+
+A request hits the **API Gateway**, which applies deterministic A/B routing policy to select a prompt/model variant. The **Inference Service** calls Azure OpenAI, logs token usage and cost to **Cosmos DB**, and returns the response. Every prompt version lives in the **Prompt Registry** and must clear the **Eval Harness**'s quality gate before it's eligible for promotion to production traffic — so a bad prompt change never reaches real users.
+
+### 🗺️ Architecture
+
+```mermaid
+flowchart LR
+    U[Client Request] --> GW[🔀 API Gateway<br/>A/B Routing · Fallback]
+    GW --> INF[🧠 Inference Service<br/>Azure OpenAI · Cost Tracking]
+    INF --> DB[(Cosmos DB<br/>Serverless)]
+    PR[📋 Prompt Registry<br/>Semver · Gates] --> GW
+    EH[📊 Eval Harness<br/>Quality Gates] -->|promote| PR
+    INF --> EH
+    DB --> EH
+
+    style GW fill:#0d1117,stroke:#58a6ff,color:#58a6ff
+    style INF fill:#0d1117,stroke:#58a6ff,color:#58a6ff
+    style PR fill:#0d1117,stroke:#58a6ff,color:#58a6ff
+    style EH fill:#0d1117,stroke:#58a6ff,color:#58a6ff
+    style DB fill:#0d1117,stroke:#8b949e,color:#8b949e
+```
+
+### 📈 Impact *(update with your real numbers before publishing)*
+
+| Metric | Value |
+|---|---|
+| P95 gateway latency | `~XXX ms` |
+| Cost tracked per request | `$X.XXX` |
+| Eval gate pass rate | `XX%` |
+| CI/CD deploy time | `~X min` |
+
+> ⚠️ Replace the placeholders above with your actual measured numbers — real figures (even modest ones) carry far more weight with reviewers than round marketing numbers.
 
 ---
 
@@ -74,6 +108,16 @@ class Sreenu:
 | **`LLM Systems`** | **`Cloud Infrastructure`** | **`ML Engineering`** | **`Data & Analytics`** |
 |---|---|---|---|
 | Prompt versioning · Eval harnesses · A/B routing · Cost tracking | Azure · GCP · CI/CD · Containerization · Serverless | RAG Pipelines · Anomaly Detection · NLP | Power BI · SQL · Data modeling |
+
+---
+
+## 🔭 Now
+
+- Building out the Eval Harness's automated regression suite for the LLM platform
+- Reading up on retrieval quality metrics for the Healthcare RAG pipeline
+- Applying to AI research / ML engineering internships for 2027
+
+*(Update this section every few weeks — a live "now" signals momentum better than a static bio.)*
 
 ---
 
@@ -105,7 +149,7 @@ class Sreenu:
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/3D_Portfolio-0d1117?style=for-the-badge&logo=vercel&logoColor=58a6ff&labelColor=0d1117)](https://3d-portfolio-psi-five.vercel.app)
+[![Portfolio](https://img.shields.io/badge/3D_Portfolio-0d1117?style=for-the-badge&logo=vercel&logoColor=58a6ff&labelColor=0d1117)](https://portfolio-pearl-nu-85.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sreenu-gopireddy/)
 [![GitHub](https://img.shields.io/badge/GitHub-sreenugopireddy-0d1117?style=for-the-badge&logo=github&logoColor=58a6ff&labelColor=0d1117)](https://github.com/sreenugopireddy)
 
