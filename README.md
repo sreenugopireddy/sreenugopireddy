@@ -70,20 +70,6 @@ flowchart LR
     style EH fill:#0d1117,stroke:#58a6ff,color:#58a6ff
     style DB fill:#0d1117,stroke:#8b949e,color:#8b949e
 ```
-
-### 📈 Impact *(update with your real numbers before publishing)*
-
-| Metric | Value |
-|---|---|
-| P95 gateway latency | `~XXX ms` |
-| Cost tracked per request | `$X.XXX` |
-| Eval gate pass rate | `XX%` |
-| CI/CD deploy time | `~X min` |
-
-
-
----
-
 ## 🛠️ Tech Stack
 
 <div align="center">
