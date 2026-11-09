@@ -103,8 +103,6 @@ flowchart LR
 - Reading up on retrieval quality metrics for the Healthcare RAG pipeline
 - Applying to AI research / ML engineering internships for 2027
 
-*(Update this section every few weeks — a live "now" signals momentum better than a static bio.)*
-
 ---
 
 ## 📜 Certifications
